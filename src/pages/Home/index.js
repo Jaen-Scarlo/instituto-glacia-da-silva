@@ -11,15 +11,31 @@ import {
 	CtaBtn,
 } from './styles.js';
 
+const homeVariants = {
+	hidden: {
+		opacity: 0,
+		backgroundColor: '#aec6e4',
+	},
+	visible: {
+		opacity: 1,
+		transition: {
+			duration: 0.9,
+		},
+	},
+};
+
 function Home() {
 	return (
 		<HomeContainer
 			as={motion.div}
 			key='homeContainer'
+			variants={homeVariants}
+			initial='hidden'
+			animate='visible'
 			exit={{ opacity: 0 }}
 		>
 			<div id='flex'>
-				<MainImg src={MainPic} />
+				<MainImg src={MainPic} as={motion.img} />
 				<TextAndCta>
 					<span class='headers'>
 						<h1>Instituto Glacia da Silva</h1>

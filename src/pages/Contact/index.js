@@ -1,7 +1,8 @@
 import React from 'react';
+import { StyledHeader } from './styles';
 
 function Contact() {
-	return <>Contact</>;
+	return <StyledHeader>CONTATO</StyledHeader>;
 }
 
 export default Contact;

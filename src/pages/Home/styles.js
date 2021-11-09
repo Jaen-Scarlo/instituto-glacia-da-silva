@@ -12,7 +12,6 @@ export const HomeContainer = styled.div`
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-
 	#flex {
 		max-height: 80%;
 		margin: 2em auto 0em auto;

@@ -7,6 +7,17 @@ import {
 } from './styles.js';
 import { motion } from 'framer-motion';
 
+const overlayVariants = {
+	hidden: { opacity: 0.5, backgroundColor: '#95b9e7' },
+	visible: {
+		opacity: 1,
+		backgroundColor: '#95b9e7',
+		transition: {
+			duration: 0.5,
+		},
+	},
+};
+
 function NavMenu({ active, setActive }) {
 	const changeState = () => setActive(!active);
 
@@ -14,17 +25,9 @@ function NavMenu({ active, setActive }) {
 		<Overlay
 			as={motion.div}
 			key='overlay'
-			initial={{
-				opacity: 0.5,
-				backgroundColor: '#95b9e7',
-			}}
-			animate={{
-				opacity: 1,
-				backgroundColor: '#95b9e7',
-				transition: {
-					duration: 0.5,
-				},
-			}}
+			variants={overlayVariants}
+			initial='hidden'
+			animate='visible'
 			exit={{
 				opacity: 0,
 				transition: {
