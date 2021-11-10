@@ -23,15 +23,15 @@ function About() {
 						<span>
 							"Continue ajudando as pessoas e cuide bem
 							de nossa família", foi o último pedido da
-							Sr. Glaucia da Silva, ao seu filho Paulo
-							da Silva.
+							<strong> Sr. Glacia da Silva</strong>, ao
+							seu filho Paulo da Silva.
 						</span>
 						<span className='space-below'>
 							Dona Glaucia sempre teve em si um
 							espírito filantrópico, que a levava a
 							estender a mão ao próximo.
 						</span>
-						<span className='space-below'>
+						<span>
 							Fazia o bem, sem olhar a quem. Essa é a
 							origem primordial da instituição que
 							agora leva o nome desse grande ser humano
@@ -40,12 +40,15 @@ function About() {
 					</StyledP>
 				</TxtDiv>
 				<StyledImgContainer>
-					<StyledImg src={FirstPic} />
+					<StyledImg src={FirstPic} imgPos={'first'} />
 				</StyledImgContainer>
 			</Section>
 
 			<div className='wavy-bg-first'>
-				<Section reverse={true}>
+				<Section
+					reverse={true}
+					className='top-padding'
+				>
 					<TxtDiv>
 						<Header>Mentor</Header>
 						<StyledP>
@@ -73,13 +76,16 @@ function About() {
 						</StyledP>
 					</TxtDiv>
 					<StyledImgContainer>
-						<StyledImg src={SecondPic} />
+						<StyledImg
+							src={SecondPic}
+							imgPos={'second'}
+						/>
 					</StyledImgContainer>
 				</Section>
 			</div>
 
 			<div className='wavy-bg-second'>
-				<Section>
+				<Section className='top-padding'>
 					<TxtDiv>
 						<Header>Futuro</Header>
 						<StyledP>
@@ -101,7 +107,10 @@ function About() {
 						</StyledP>
 					</TxtDiv>
 					<StyledImgContainer>
-						<StyledImg src={ThirdPic} />
+						<StyledImg
+							src={ThirdPic}
+							imgPos={'third'}
+						/>
 					</StyledImgContainer>
 				</Section>
 			</div>

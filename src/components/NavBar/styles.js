@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 export const NavContainer = styled.nav`
 	position: absolute;
+	top: 0;
 	width: 100%;
 	background-color: #95b9e7;
 	opacity: 0.95;
