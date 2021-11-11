@@ -43,7 +43,7 @@ export const StyledLink = styled(Link)`
 	margin: 0;
 	padding: 0.25em 0em;
 	background: #89aad5;
-
+	color: white;
 	&:visited {
 		color: white;
 	}

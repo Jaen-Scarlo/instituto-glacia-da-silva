@@ -15,7 +15,7 @@ import ThirdPic from '../../assets/barracao-cdb.jpg';
 
 function About() {
 	return (
-		<AboutContainer>
+		<AboutContainer as={motion.div}>
 			<Section>
 				<TxtDiv>
 					<Header>Origem</Header>
