@@ -46,6 +46,7 @@ function Objective() {
 			x: 0,
 			opacity: 1,
 			transition: {
+				ease: 'easeOut',
 				duration: 0.7,
 			},
 		},
@@ -87,6 +88,10 @@ function Objective() {
 									animate='visible'
 									whileHover={{
 										rotate: 0,
+										transition: {
+											ease: 'easeOut',
+											duration: 0.2,
+										},
 									}}
 									exit={
 										direction === 'right'
@@ -115,7 +120,7 @@ function Objective() {
 				/>
 			</StyledSlider>
 
-			<StyledParagraph>
+			<StyledParagraph position={'bottom'}>
 				Os aparelhos não precisam ser novos, e alguns
 				são reparados se necessário antes de serem
 				encaminhados adiante para quem precisa. As

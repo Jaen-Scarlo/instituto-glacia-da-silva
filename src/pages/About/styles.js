@@ -90,7 +90,7 @@ export const StyledP = styled.p`
 		font-size: 1.4em;
 	}
 	@media (max-width: 700px) {
-		font-size: 1.7em;
+		font-size: 1.35em;
 	}
 	span {
 		display: block;
