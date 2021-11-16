@@ -28,12 +28,7 @@ function NavMenu({ active, setActive }) {
 			variants={overlayVariants}
 			initial='hidden'
 			animate='visible'
-			exit={{
-				opacity: 0,
-				transition: {
-					duration: 0.5,
-				},
-			}}
+			exit='hidden'
 		>
 			<StyledClose
 				exit={{ opacity: 0 }}

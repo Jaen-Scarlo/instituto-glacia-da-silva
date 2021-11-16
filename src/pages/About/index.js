@@ -13,13 +13,87 @@ import FirstPic from '../../assets/dona-glacia.jpg';
 import SecondPic from '../../assets/paulo.jpg';
 import ThirdPic from '../../assets/barracao-cdb.jpg';
 
+const aboutVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
+const headerVariant = {
+	hidden: { opacity: 0, x: '-30px' },
+	visible: {
+		opacity: 1,
+		x: '0',
+		transition: {
+			delay: 0.5,
+			duration: 1.7,
+			type: 'spring',
+			ease: 'easeIn',
+		},
+	},
+};
+const paragraphVariant = {
+	hidden: { opacity: 0, x: '-30px' },
+	visible: {
+		opacity: 1,
+		x: '0',
+		transition: {
+			delay: 0.7,
+			duration: 1.4,
+			type: 'spring',
+			ease: 'easeIn',
+		},
+	},
+};
+
+const imageVariant = {
+	hidden: { opacity: 0, x: '30px' },
+	visible: {
+		opacity: 1,
+		x: '0',
+		transition: {
+			delay: 0.9,
+			duration: 1.4,
+			type: 'spring',
+			ease: 'easeIn',
+		},
+	},
+};
+
 function About() {
 	return (
-		<AboutContainer as={motion.div}>
+		<AboutContainer
+			as={motion.div}
+			key='about'
+			variants={aboutVariants}
+			initial='hidden'
+			animate='visible'
+			exit='hidden'
+		>
 			<Section>
 				<TxtDiv>
-					<Header>Origem</Header>
-					<StyledP>
+					<Header
+						as={motion.div}
+						key='header'
+						variants={headerVariant}
+						initial='hidden'
+						animate='visible'
+						exit='hidden'
+					>
+						Origem
+					</Header>
+					<StyledP
+						as={motion.div}
+						key='styledP'
+						variants={paragraphVariant}
+						initial='hidden'
+						animate='visible'
+						exit='hidden'
+					>
 						<span>
 							"Continue ajudando as pessoas e cuide bem
 							de nossa família", foi o último pedido da
@@ -39,7 +113,14 @@ function About() {
 						</span>
 					</StyledP>
 				</TxtDiv>
-				<StyledImgContainer>
+				<StyledImgContainer
+					as={motion.div}
+					key='styledP'
+					variants={imageVariant}
+					initial='hidden'
+					animate='visible'
+					exit='hidden'
+				>
 					<StyledImg src={FirstPic} imgPos={'first'} />
 				</StyledImgContainer>
 			</Section>
