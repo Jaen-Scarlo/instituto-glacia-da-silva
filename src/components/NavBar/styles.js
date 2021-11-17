@@ -57,12 +57,17 @@ export const StyledLink = styled(Link)`
 	color: #fff;
 	font-size: 1.5em;
 
+	&.active-link {
+		border-bottom: 4px solid white;
+		transition: border-width 0.1s ease-in-out;
+	}
+
 	&:visited {
 		color: #fff;
 	}
 
 	:not(:last-child) {
-		padding-right: 1.3em;
+		margin-right: 1.3em;
 	}
 `;
 

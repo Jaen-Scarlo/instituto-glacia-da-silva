@@ -33,11 +33,97 @@ const imgAndSub = [
 	},
 ];
 
+const objectiveVariant = {
+	hidden: {
+		opacity: 0,
+	},
+	visible: {
+		opacity: 1,
+		transition: {
+			duration: 1,
+		},
+		exit: {
+			opacity: 0,
+			transition: {
+				duration: 1,
+			},
+		},
+	},
+};
+const textRightVariant = {
+	hidden: {
+		opacity: 0,
+		x: '-30px',
+		transition: {
+			duration: 1,
+		},
+	},
+	visible: {
+		opacity: 1,
+		x: '0px',
+		transition: {
+			duration: 1,
+		},
+	},
+	exit: {
+		opacity: 0,
+		x: '-30px',
+		transition: {
+			duration: 0.4,
+		},
+	},
+};
+const textLeftVariant = {
+	hidden: {
+		opacity: 0,
+		x: '30px',
+		transition: {
+			duration: 1,
+		},
+	},
+	visible: {
+		opacity: 1,
+		x: '0px',
+		transition: {
+			duration: 1,
+		},
+	},
+	exit: {
+		opacity: 0,
+		x: '30px',
+		transition: {
+			duration: 0.4,
+			delay: 0.2,
+		},
+	},
+};
+const sliderVariant = {
+	hidden: {
+		opacity: 0,
+		transition: {
+			duration: 1,
+		},
+	},
+	visible: {
+		opacity: 1,
+		transition: {
+			duration: 1,
+		},
+	},
+	exit: {
+		opacity: 0,
+		transition: {
+			duration: 0.4,
+			delay: 0.3,
+		},
+	},
+};
+
 function Objective() {
 	const [[currentSlide, direction], setCurrent] =
 		useState([0, null]);
 
-	const objectiveVariants = {
+	const sliderVariants = {
 		hidden: {
 			x: direction === 'right' ? '100px' : '-100px',
 			opacity: 0,
@@ -50,11 +136,24 @@ function Objective() {
 				duration: 0.7,
 			},
 		},
+		exit: {
+			x: direction === 'right' ? '100px' : '-100px',
+			opacity: 0,
+		},
 	};
 
 	return (
-		<ObjectiveContainer>
-			<StyledParagraph>
+		<ObjectiveContainer
+			as={motion.div}
+			variants={objectiveVariant}
+			initial='hidden'
+			animate='visible'
+			exit='exit'
+		>
+			<StyledParagraph
+				as={motion.div}
+				variants={textRightVariant}
+			>
 				O objetivo principal da instituição é a
 				captação e doação de aparelhato hospitalar para
 				auxiliar pessoas com deficiência. Também é
@@ -62,8 +161,10 @@ function Objective() {
 				roupas para famílias com necessidade.
 			</StyledParagraph>
 
-			<StyledSlider>
-				{console.log(currentSlide + direction)}
+			<StyledSlider
+				as={motion.div}
+				variants={sliderVariant}
+			>
 				<StyledReturn
 					onClick={() => {
 						currentSlide !== 0
@@ -83,7 +184,7 @@ function Objective() {
 									key={index}
 									as={motion.div}
 									style={{ rotate: -3 }}
-									variants={objectiveVariants}
+									variants={sliderVariants}
 									initial='hidden'
 									animate='visible'
 									whileHover={{
@@ -120,7 +221,11 @@ function Objective() {
 				/>
 			</StyledSlider>
 
-			<StyledParagraph position={'bottom'}>
+			<StyledParagraph
+				position={'bottom'}
+				as={motion.div}
+				variants={textLeftVariant}
+			>
 				Os aparelhos não precisam ser novos, e alguns
 				são reparados se necessário antes de serem
 				encaminhados adiante para quem precisa. As

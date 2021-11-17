@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink as Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 
 export const Overlay = styled.div`
@@ -35,7 +35,7 @@ export const StyledWrapper = styled.div`
 	margin-bottom: 2em;
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
 	cursor: pointer;
 	width: 100%;
 	text-align: center;
@@ -44,6 +44,7 @@ export const StyledLink = styled(Link)`
 	padding: 0.25em 0em;
 	background: #89aad5;
 	color: white;
+
 	&:visited {
 		color: white;
 	}

@@ -18,7 +18,7 @@ export const ObjectiveContainer = styled.div`
 `;
 export const StyledParagraph = styled.p`
 	color: white;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	line-height: 1.3;
 	max-width: 60%;
 	margin: 0 auto;
@@ -34,7 +34,7 @@ export const StyledParagraph = styled.p`
 
 export const StyledSlider = styled.div`
 	max-width: 80%;
-	margin: 3em auto;
+	margin: 2em auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -13,17 +13,24 @@ import FirstPic from '../../assets/dona-glacia.jpg';
 import SecondPic from '../../assets/paulo.jpg';
 import ThirdPic from '../../assets/barracao-cdb.jpg';
 
-const aboutVariants = {
-	hidden: { opacity: 0 },
+const aboutVariant = {
+	hidden: {
+		opacity: 0,
+	},
 	visible: {
 		opacity: 1,
 		transition: {
 			duration: 1,
 		},
+		exit: {
+			opacity: 0,
+			transition: {
+				duration: 1,
+			},
+		},
 	},
 };
-
-const headerVariant = {
+const headerVariantLeft = {
 	hidden: { opacity: 0, x: '-30px' },
 	visible: {
 		opacity: 1,
@@ -35,9 +42,39 @@ const headerVariant = {
 			ease: 'easeIn',
 		},
 	},
+	exit: {
+		opacity: 0,
+		x: '-30px',
+		transition: {
+			duration: 0.4,
+		},
+	},
 };
-const paragraphVariant = {
-	hidden: { opacity: 0, x: '-30px' },
+const headerVariantRight = {
+	hidden: { opacity: 0, x: '30px' },
+	visible: {
+		opacity: 1,
+		x: '0',
+		transition: {
+			delay: 0.5,
+			duration: 1.7,
+			type: 'spring',
+			ease: 'easeIn',
+		},
+	},
+	exit: {
+		opacity: 0,
+		x: '30px',
+		transition: {
+			duration: 0.4,
+		},
+	},
+};
+const paragraphVariantLeft = {
+	hidden: {
+		opacity: 0,
+		x: '-30px',
+	},
 	visible: {
 		opacity: 1,
 		x: '0',
@@ -48,9 +85,40 @@ const paragraphVariant = {
 			ease: 'easeIn',
 		},
 	},
+	exit: {
+		opacity: 0,
+		x: '-30px',
+		transition: {
+			delay: 0.1,
+			duration: 0.4,
+		},
+	},
 };
-
-const imageVariant = {
+const paragraphVariantRight = {
+	hidden: {
+		opacity: 0,
+		x: '30px',
+	},
+	visible: {
+		opacity: 1,
+		x: '0',
+		transition: {
+			delay: 0.7,
+			duration: 1.4,
+			type: 'spring',
+			ease: 'easeIn',
+		},
+	},
+	exit: {
+		opacity: 0,
+		x: '30px',
+		transition: {
+			delay: 0.1,
+			duration: 0.4,
+		},
+	},
+};
+const imageVariantLeft = {
 	hidden: { opacity: 0, x: '30px' },
 	visible: {
 		opacity: 1,
@@ -62,37 +130,57 @@ const imageVariant = {
 			ease: 'easeIn',
 		},
 	},
+	exit: {
+		opacity: 0,
+		x: '30px',
+		transition: {
+			delay: 0.3,
+			duration: 0.4,
+		},
+	},
+};
+const imageVariantRight = {
+	hidden: { opacity: 0, x: '-30px' },
+	visible: {
+		opacity: 1,
+		x: '0',
+		transition: {
+			delay: 0.9,
+			duration: 1.4,
+			type: 'spring',
+			ease: 'easeIn',
+		},
+	},
+	exit: {
+		opacity: 0,
+		x: '-30px',
+		transition: {
+			delay: 0.3,
+			duration: 0.4,
+		},
+	},
 };
 
 function About() {
 	return (
 		<AboutContainer
 			as={motion.div}
-			key='about'
-			variants={aboutVariants}
+			variants={aboutVariant}
 			initial='hidden'
 			animate='visible'
-			exit='hidden'
+			exit='exit'
 		>
 			<Section>
 				<TxtDiv>
 					<Header
 						as={motion.div}
-						key='header'
-						variants={headerVariant}
-						initial='hidden'
-						animate='visible'
-						exit='hidden'
+						variants={headerVariantLeft}
 					>
 						Origem
 					</Header>
 					<StyledP
 						as={motion.div}
-						key='styledP'
-						variants={paragraphVariant}
-						initial='hidden'
-						animate='visible'
-						exit='hidden'
+						variants={paragraphVariantLeft}
 					>
 						<span>
 							"Continue ajudando as pessoas e cuide bem
@@ -115,11 +203,7 @@ function About() {
 				</TxtDiv>
 				<StyledImgContainer
 					as={motion.div}
-					key='styledP'
-					variants={imageVariant}
-					initial='hidden'
-					animate='visible'
-					exit='hidden'
+					variants={imageVariantLeft}
 				>
 					<StyledImg src={FirstPic} imgPos={'first'} />
 				</StyledImgContainer>
@@ -131,8 +215,16 @@ function About() {
 					className='top-padding'
 				>
 					<TxtDiv>
-						<Header>Mentor</Header>
-						<StyledP>
+						<Header
+							as={motion.div}
+							variants={headerVariantRight}
+						>
+							Mentor
+						</Header>
+						<StyledP
+							as={motion.div}
+							variants={paragraphVariantRight}
+						>
 							<span>
 								Ao visitar um parente, Sr. Paulo viu
 								uma cadeira de rodas quebrada em sua
@@ -156,7 +248,10 @@ function About() {
 							</span>
 						</StyledP>
 					</TxtDiv>
-					<StyledImgContainer>
+					<StyledImgContainer
+						as={motion.div}
+						variants={imageVariantRight}
+					>
 						<StyledImg
 							src={SecondPic}
 							imgPos={'second'}
@@ -168,8 +263,16 @@ function About() {
 			<div className='wavy-bg-second'>
 				<Section className='top-padding'>
 					<TxtDiv>
-						<Header>Futuro</Header>
-						<StyledP>
+						<Header
+							as={motion.div}
+							variants={headerVariantLeft}
+						>
+							Futuro
+						</Header>
+						<StyledP
+							as={motion.div}
+							variants={paragraphVariantLeft}
+						>
 							<span className='space-below'>
 								Além de fornecer os produtos
 								hospitalares para quem precisa, o
@@ -187,7 +290,10 @@ function About() {
 							</span>
 						</StyledP>
 					</TxtDiv>
-					<StyledImgContainer>
+					<StyledImgContainer
+						as={motion.div}
+						variants={imageVariantLeft}
+					>
 						<StyledImg
 							src={ThirdPic}
 							imgPos={'third'}

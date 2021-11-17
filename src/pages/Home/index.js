@@ -11,7 +11,7 @@ import {
 	CtaBtn,
 } from './styles.js';
 
-const homeVariants = {
+const homeVariant = {
 	hidden: {
 		opacity: 0,
 		backgroundColor: '#aec6e4',
@@ -29,7 +29,7 @@ function Home() {
 		<HomeContainer
 			as={motion.div}
 			key='homeContainer'
-			variants={homeVariants}
+			variants={homeVariant}
 			initial='hidden'
 			animate='visible'
 			exit={{ opacity: 0 }}

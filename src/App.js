@@ -33,13 +33,19 @@ function App() {
 						key={location.pathname}
 					>
 						<Route path='/' exact component={Home} />
-						<Route path='/sobre' component={About} />
+						<Route
+							path='/sobre'
+							exact
+							component={About}
+						/>
 						<Route
 							path='/objetivo'
+							exact
 							component={Objective}
 						/>
 						<Route
 							path='/contato'
+							exact
 							component={Contact}
 						/>
 					</Switch>

@@ -1,13 +1,15 @@
 import React from 'react';
+
 import {
 	Overlay,
 	StyledClose,
 	StyledWrapper,
 	StyledLink as Link,
 } from './styles.js';
+import './NavMenu.css';
 import { motion } from 'framer-motion';
 
-const overlayVariants = {
+const overlayVariant = {
 	hidden: { opacity: 0.5, backgroundColor: '#95b9e7' },
 	visible: {
 		opacity: 1,
@@ -25,7 +27,7 @@ function NavMenu({ active, setActive }) {
 		<Overlay
 			as={motion.div}
 			key='overlay'
-			variants={overlayVariants}
+			variants={overlayVariant}
 			initial='hidden'
 			animate='visible'
 			exit='hidden'
@@ -35,22 +37,32 @@ function NavMenu({ active, setActive }) {
 				onClick={() => changeState()}
 			/>
 			<StyledWrapper>
-				<Link to='/' onClick={() => changeState()}>
+				<Link
+					exact={true}
+					to='/'
+					onClick={() => changeState()}
+				>
 					INICIO
 				</Link>
 				<Link
+					exact={true}
 					to='/sobre'
+					activeClassName='is-active'
 					onClick={() => changeState()}
 				>
 					SOBRE
 				</Link>
 				<Link
+					exact={true}
 					to='/objetivo'
+					activeClassName='is-active'
 					onClick={() => changeState()}
 				>
 					OBJETIVO
 				</Link>
 				<Link
+					exact={true}
+					activeClassName='is-active'
 					to='/contato'
 					onClick={() => changeState()}
 				>

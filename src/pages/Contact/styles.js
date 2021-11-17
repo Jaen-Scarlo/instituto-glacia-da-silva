@@ -15,7 +15,7 @@ export const MainContainer = styled.div`
 		width: 50%;
 		display: flex;
 		align-items: flex-start;
-		padding-top: 7em;
+		padding-top: 5.2em;
 	}
 	.first {
 		background-color: #aec6e4;

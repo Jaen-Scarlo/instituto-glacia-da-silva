@@ -25,11 +25,24 @@ function NavBar({ active, setActive }) {
 			</Link>
 			<StyledBars onClick={() => setActive(!active)} />
 			<SLContainer>
-				<Link to='/sobre' activeStyle>
+				<Link
+					to='/sobre'
+					activeClassName='active-link'
+				>
 					SOBRE
 				</Link>
-				<Link to='/objetivo'>OBJETIVO</Link>
-				<Link to='/contato'>CONTATO</Link>
+				<Link
+					to='/objetivo'
+					activeClassName='active-link'
+				>
+					OBJETIVO
+				</Link>
+				<Link
+					to='/contato'
+					activeClassName='active-link'
+				>
+					CONTATO
+				</Link>
 			</SLContainer>
 		</Nav>
 	);
