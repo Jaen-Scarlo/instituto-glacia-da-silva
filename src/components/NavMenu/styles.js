@@ -45,6 +45,9 @@ export const StyledLink = styled(NavLink)`
 	background: #89aad5;
 	color: white;
 
+	&.active-link-menu {
+		background: #52a5f2;
+	}
 	&:visited {
 		color: white;
 	}

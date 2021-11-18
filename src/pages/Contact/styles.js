@@ -111,6 +111,14 @@ export const FlexSocialText = styled.div`
 	margin-top: 5em;
 	min-width: 37px;
 
+	a {
+		color: white;
+		text-decoration: none;
+		&:visited {
+			color: white;
+		}
+	}
+
 	@media (max-width: 900px) {
 		margin-top: 3em;
 	}

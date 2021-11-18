@@ -6,13 +6,11 @@ import {
 	StyledWrapper,
 	StyledLink as Link,
 } from './styles.js';
-import './NavMenu.css';
 import { motion } from 'framer-motion';
 
 const overlayVariant = {
-	hidden: { opacity: 0.5, backgroundColor: '#95b9e7' },
+	hidden: { backgroundColor: '#95b9e7' },
 	visible: {
-		opacity: 1,
 		backgroundColor: '#95b9e7',
 		transition: {
 			duration: 0.5,
@@ -38,6 +36,7 @@ function NavMenu({ active, setActive }) {
 			/>
 			<StyledWrapper>
 				<Link
+					activeClassName='active-link-menu'
 					exact={true}
 					to='/'
 					onClick={() => changeState()}
@@ -45,24 +44,24 @@ function NavMenu({ active, setActive }) {
 					INICIO
 				</Link>
 				<Link
+					activeClassName='active-link-menu'
 					exact={true}
 					to='/sobre'
-					activeClassName='is-active'
 					onClick={() => changeState()}
 				>
 					SOBRE
 				</Link>
 				<Link
+					activeClassName='active-link-menu'
 					exact={true}
 					to='/objetivo'
-					activeClassName='is-active'
 					onClick={() => changeState()}
 				>
 					OBJETIVO
 				</Link>
 				<Link
+					activeClassName='active-link-menu'
 					exact={true}
-					activeClassName='is-active'
 					to='/contato'
 					onClick={() => changeState()}
 				>

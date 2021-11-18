@@ -16,21 +16,14 @@ import {
 } from './styles';
 
 const contactVariant = {
-	hidden: {
-		opacity: 0,
-	},
+	hidden: {},
 	visible: {
 		opacity: 1,
 		transition: {
 			duration: 1,
 		},
-		exit: {
-			opacity: 0,
-			transition: {
-				duration: 1,
-			},
-		},
 	},
+	exit: {},
 };
 
 const firstTextVariant = {
@@ -42,14 +35,14 @@ const firstTextVariant = {
 		opacity: 1,
 		x: '0px',
 		transition: {
-			duration: 1,
+			duration: 0.7,
 		},
-		exit: {
-			opacity: 0,
-			x: '-30px',
-			transition: {
-				duration: 1,
-			},
+	},
+	exit: {
+		opacity: 0,
+		x: '-30px',
+		transition: {
+			duration: 0.7,
 		},
 	},
 };
@@ -63,12 +56,15 @@ const middleIconsVariant = {
 		opacity: 1,
 		x: '0px',
 		transition: {
-			duration: 1,
-			delay: 0.7,
+			duration: 0.7,
+			delay: 0.6,
 		},
-		exit: {
-			opacity: 0,
-			x: '-30px',
+	},
+	exit: {
+		opacity: 0,
+		x: '-30px',
+		transition: {
+			duration: 0.9,
 		},
 	},
 };
@@ -82,12 +78,15 @@ const bottomIconsVariant = {
 		opacity: 1,
 		x: '0px',
 		transition: {
-			duration: 1,
-			delay: 1.4,
+			duration: 0.6,
+			delay: 1.1,
 		},
-		exit: {
-			opacity: 0,
-			x: '-30px',
+	},
+	exit: {
+		opacity: 0,
+		x: '-30px',
+		transition: {
+			duration: 0.9,
 		},
 	},
 };
@@ -101,12 +100,15 @@ const formVariant = {
 		opacity: 1,
 		x: '0px',
 		transition: {
-			duration: 1,
-			delay: 2.1,
+			duration: 0.6,
+			delay: 1.7,
 		},
-		exit: {
-			opacity: 0,
-			x: '30px',
+	},
+	exit: {
+		opacity: 0,
+		x: '30px',
+		transition: {
+			duration: 0.9,
 		},
 	},
 };
@@ -167,22 +169,33 @@ function Contact() {
 							as={motion.div}
 							variants={bottomIconsVariant}
 						>
-							<FlexIconText>
-								<FbIcon />
-								<span>
-									facebook.com/institutoglaciadasilva
-								</span>
-							</FlexIconText>
-
-							<FlexIconText
-								as={motion.div}
-								variants={bottomIconsVariant}
+							<a
+								href='https://www.facebook.com/institutoglaciadasilva'
+								target='_blank'
+								rel='noreferrer'
 							>
-								<IgIcon />
-								<span>
-									instagram.com/institutoglaciadasilva
-								</span>
-							</FlexIconText>
+								<FlexIconText>
+									<FbIcon />
+									<span>
+										facebook.com/institutoglaciadasilva
+									</span>
+								</FlexIconText>
+							</a>
+							<a
+								href='https://www.instagram.com/institutoglaciadasilva'
+								target='_blank'
+								rel='noreferrer'
+							>
+								<FlexIconText
+									as={motion.div}
+									variants={bottomIconsVariant}
+								>
+									<IgIcon />
+									<span>
+										instagram.com/institutoglaciadasilva
+									</span>
+								</FlexIconText>
+							</a>
 						</FlexSocialText>
 					</InfoSection>
 				</div>
