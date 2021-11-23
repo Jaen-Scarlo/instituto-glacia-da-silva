@@ -113,6 +113,24 @@ const formVariant = {
 	},
 };
 
+const footerVariant = {
+	hidden: {
+		opacity: 0,
+		y: '30px',
+	},
+	visible: {
+		opacity: 1,
+		y: '0px',
+		transition: {
+			duration: 0.6,
+			delay: 2,
+		},
+	},
+	exit: {
+		opacity: 0,
+	},
+};
+
 function Contact() {
 	return (
 		<ContactContainer
@@ -245,7 +263,10 @@ function Contact() {
 						</form>
 					</FormSection>
 				</div>
-				<StyledFooter>
+				<StyledFooter
+					as={motion.div}
+					variants={footerVariant}
+				>
 					Site feito e cedido por @JaenScarlo
 				</StyledFooter>
 			</MainContainer>

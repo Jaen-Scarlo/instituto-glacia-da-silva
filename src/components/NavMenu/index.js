@@ -13,10 +13,23 @@ const overlayVariant = {
 	visible: {
 		backgroundColor: '#95b9e7',
 		transition: {
-			duration: 0.5,
+			staggerChildren: 0.4,
 		},
 	},
-	exit: {},
+	exit: {
+		backgroundColor: '#95b9e7',
+		transition: {
+			staggerChildren: 0.1,
+		},
+	},
+};
+const itemVariant = {
+	hidden: { x: '-30px', opacity: 0 },
+	visible: {
+		x: '0px',
+		opacity: 1,
+	},
+	exit: { x: '-30px', opacity: 0 },
 };
 
 function NavMenu({ active, setActive }) {
@@ -29,7 +42,7 @@ function NavMenu({ active, setActive }) {
 			variants={overlayVariant}
 			initial='hidden'
 			animate='visible'
-			exit='hidden'
+			exit='exit'
 		>
 			<StyledClose
 				exit={{ opacity: 0 }}
@@ -37,6 +50,8 @@ function NavMenu({ active, setActive }) {
 			/>
 			<StyledWrapper>
 				<Link
+					as={motion(Link)}
+					variants={itemVariant}
 					activeClassName='active-link-menu'
 					exact={true}
 					to='/'
@@ -45,6 +60,8 @@ function NavMenu({ active, setActive }) {
 					INICIO
 				</Link>
 				<Link
+					as={motion(Link)}
+					variants={itemVariant}
 					activeClassName='active-link-menu'
 					exact={true}
 					to='/sobre'
@@ -53,6 +70,8 @@ function NavMenu({ active, setActive }) {
 					SOBRE
 				</Link>
 				<Link
+					as={motion(Link)}
+					variants={itemVariant}
 					activeClassName='active-link-menu'
 					exact={true}
 					to='/objetivo'
@@ -61,6 +80,8 @@ function NavMenu({ active, setActive }) {
 					OBJETIVO
 				</Link>
 				<Link
+					as={motion(Link)}
+					variants={itemVariant}
 					activeClassName='active-link-menu'
 					exact={true}
 					to='/contato'
