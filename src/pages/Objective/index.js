@@ -137,6 +137,7 @@ function Objective() {
 
 	return (
 		<ObjectiveContainer
+			key='objetivo'
 			as={motion.div}
 			variants={objectiveVariant}
 			initial='hidden'

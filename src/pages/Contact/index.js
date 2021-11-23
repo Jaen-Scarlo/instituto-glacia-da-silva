@@ -116,6 +116,7 @@ const formVariant = {
 function Contact() {
 	return (
 		<ContactContainer
+			key='contato'
 			as={motion.div}
 			variants={contactVariant}
 			initial='hidden'

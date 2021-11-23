@@ -16,6 +16,7 @@ const overlayVariant = {
 			duration: 0.5,
 		},
 	},
+	exit: {},
 };
 
 function NavMenu({ active, setActive }) {

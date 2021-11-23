@@ -21,7 +21,7 @@ function App() {
 	const [active, setActive] = useState(false);
 
 	return (
-		<AnimatePresence exitBeforeEnter={true}>
+		<AnimatePresence exitBeforeEnter>
 			{!active ? (
 				<div className='App'>
 					<NavBar

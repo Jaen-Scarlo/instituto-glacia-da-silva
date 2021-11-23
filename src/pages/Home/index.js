@@ -100,9 +100,11 @@ const buttonVariant = {
 		y: '30px',
 	},
 };
+
 function Home() {
 	return (
 		<HomeContainer
+			key=''
 			as={motion.div}
 			variants={homeVariant}
 			initial='hidden'

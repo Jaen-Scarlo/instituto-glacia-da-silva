@@ -159,6 +159,7 @@ const imageVariantRight = {
 function About() {
 	return (
 		<AboutContainer
+			key='sobre'
 			as={motion.div}
 			variants={aboutVariant}
 			initial='hidden'
