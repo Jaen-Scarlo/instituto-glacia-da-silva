@@ -104,7 +104,7 @@ const buttonVariant = {
 function Home() {
 	return (
 		<HomeContainer
-			key=''
+			key='home'
 			as={motion.div}
 			variants={homeVariant}
 			initial='hidden'

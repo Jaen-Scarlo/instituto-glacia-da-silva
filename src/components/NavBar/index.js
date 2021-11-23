@@ -16,7 +16,7 @@ const navVariant = {
 	visible: {
 		opacity: 1,
 		transition: {
-			duration: 3,
+			duration: 2.5,
 		},
 	},
 	exit: { opacity: 0 },
@@ -25,7 +25,7 @@ const navVariant = {
 function NavBar({ active, setActive }) {
 	return (
 		<Nav
-			as={motion.div}
+			as={motion.nav}
 			key='nav'
 			variants={navVariant}
 			initial='hidden'
@@ -40,18 +40,21 @@ function NavBar({ active, setActive }) {
 			<StyledBars onClick={() => setActive(!active)} />
 			<SLContainer>
 				<Link
+					exact={true}
 					to='/sobre'
 					activeClassName='active-link'
 				>
 					SOBRE
 				</Link>
 				<Link
+					exact={true}
 					to='/objetivo'
 					activeClassName='active-link'
 				>
 					OBJETIVO
 				</Link>
 				<Link
+					exact={true}
 					to='/contato'
 					activeClassName='active-link'
 				>
