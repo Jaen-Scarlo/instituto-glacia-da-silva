@@ -17,13 +17,8 @@ import ThirdPic from '../../assets/barracao-cdb.jpg';
 
 const aboutVariant = {
 	hidden: {},
-	visible: {
-		opacity: 1,
-		transition: {
-			duration: 1,
-		},
-		exit: {},
-	},
+	visible: {},
+	exit: {},
 };
 const headerVariantLeft = {
 	hidden: { opacity: 0, x: '-30px' },

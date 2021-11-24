@@ -26,7 +26,7 @@ function NavBar({ active, setActive }) {
 	return (
 		<Nav
 			as={motion.nav}
-			key='nav'
+			key='navBar'
 			variants={navVariant}
 			initial='hidden'
 			animate='visible'

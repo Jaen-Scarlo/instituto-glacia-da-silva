@@ -7,7 +7,10 @@ import {
 	useLocation,
 } from 'react-router-dom';
 
-import { AnimatePresence } from 'framer-motion';
+import {
+	motion,
+	AnimatePresence,
+} from 'framer-motion';
 
 import NavBar from './components/NavBar/index';
 import NavMenu from './components/NavMenu/index';
@@ -21,35 +24,48 @@ function App() {
 	const [active, setActive] = useState(false);
 
 	return (
-		<AnimatePresence exitBeforeEnter>
+		<>
 			{!active ? (
-				<div className='App'>
-					<NavBar
-						active={active}
-						setActive={setActive}
-					/>
-					<Switch
-						location={location}
-						key={location.pathname}
-					>
-						<Route path='/' exact component={Home} />
-						<Route
-							path='/sobre'
-							exact
-							component={About}
+				<motion.div className='App'>
+					<AnimatePresence>
+						<NavBar
+							as={motion.nav}
+							active={active}
+							setActive={setActive}
+							key='navbar'
 						/>
-						<Route
-							path='/objetivo'
-							exact
-							component={Objective}
-						/>
-						<Route
-							path='/contato'
-							exact
-							component={Contact}
-						/>
-					</Switch>
-				</div>
+						<Switch
+							as={motion.div}
+							location={location}
+							key={location.pathname}
+						>
+							<Route
+								path='/'
+								exact
+								component={Home}
+								key={location.key}
+							/>
+							<Route
+								path='/sobre'
+								exact
+								component={About}
+								key={location.key}
+							/>
+							<Route
+								path='/objetivo'
+								exact
+								component={Objective}
+								key={location.key}
+							/>
+							<Route
+								path='/contato'
+								exact
+								component={Contact}
+								key={location.key}
+							/>
+						</Switch>
+					</AnimatePresence>
+				</motion.div>
 			) : (
 				<NavMenu
 					key='navMenu'
@@ -57,7 +73,7 @@ function App() {
 					setActive={setActive}
 				/>
 			)}
-		</AnimatePresence>
+		</>
 	);
 }
 

@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import {
-	motion,
-	AnimatePresence,
-} from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import {
 	ObjectiveContainer,
@@ -35,13 +32,8 @@ const imgAndSub = [
 
 const objectiveVariant = {
 	hidden: {},
-	visible: {
-		opacity: 1,
-		transition: {
-			duration: 1,
-		},
-		exit: {},
-	},
+	visible: {},
+	exit: {},
 };
 const textRightVariant = {
 	hidden: {
@@ -168,44 +160,40 @@ function Objective() {
 									'left',
 							  ]);
 					}}
-				/>
-
+				/>{' '}
 				{imgAndSub.map((item, index) => {
 					if (index === currentSlide) {
 						return (
-							<AnimatePresence>
-								<StyledImgContainer
-									key={index}
-									as={motion.div}
-									style={{ rotate: -3 }}
-									variants={sliderVariants}
-									initial='hidden'
-									animate='visible'
-									whileHover={{
-										rotate: 0,
-										transition: {
-											ease: 'easeOut',
-											duration: 0.2,
-										},
-									}}
-									exit={
-										direction === 'right'
-											? {
-													x: '300px',
-													opacity: 0,
-											  }
-											: ''
-									}
-								>
-									<StyledImg src={item.img} />
-									<p>{item.desc}</p>
-								</StyledImgContainer>
-							</AnimatePresence>
+							<StyledImgContainer
+								key={index}
+								as={motion.div}
+								style={{ rotate: -3 }}
+								variants={sliderVariants}
+								initial='hidden'
+								animate='visible'
+								whileHover={{
+									rotate: 0,
+									transition: {
+										ease: 'easeOut',
+										duration: 0.2,
+									},
+								}}
+								exit={
+									direction === 'right'
+										? {
+												x: '300px',
+												opacity: 0,
+										  }
+										: ''
+								}
+							>
+								<StyledImg src={item.img} />
+								<p>{item.desc}</p>
+							</StyledImgContainer>
 						);
 					}
 					return null;
 				})}
-
 				<StyledForward
 					onClick={() => {
 						currentSlide !== imgAndSub.length - 1

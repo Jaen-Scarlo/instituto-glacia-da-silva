@@ -38,7 +38,7 @@ function NavMenu({ active, setActive }) {
 	return (
 		<Overlay
 			as={motion.div}
-			key='overlay'
+			key='navMenu'
 			variants={overlayVariant}
 			initial='hidden'
 			animate='visible'

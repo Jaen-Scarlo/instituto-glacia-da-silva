@@ -11,12 +11,7 @@ import {
 
 const homeVariant = {
 	hidden: {},
-	visible: {
-		opacity: 1,
-		transition: {
-			duration: 0.9,
-		},
-	},
+	visible: {},
 	exit: {},
 };
 

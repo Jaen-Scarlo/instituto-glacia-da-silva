@@ -17,12 +17,7 @@ import {
 
 const contactVariant = {
 	hidden: {},
-	visible: {
-		opacity: 1,
-		transition: {
-			duration: 1,
-		},
-	},
+	visible: {},
 	exit: {},
 };
 
