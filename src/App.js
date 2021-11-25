@@ -19,21 +19,34 @@ import About from './pages/About/index';
 import Objective from './pages/Objective/index';
 import Contact from './pages/Contact/index';
 
+const appVariant = {
+	hidden: {},
+	visible: {},
+	exit: {},
+};
+
 function App() {
 	const location = useLocation();
 	const [active, setActive] = useState(false);
 
 	return (
-		<>
+		<AnimatePresence exitBeforeEnter>
 			{!active ? (
-				<motion.div className='App'>
-					<AnimatePresence>
-						<NavBar
-							as={motion.nav}
-							active={active}
-							setActive={setActive}
-							key='navbar'
-						/>
+				<motion.div
+					className='App'
+					key='app'
+					variants={appVariant}
+					initial='hidden'
+					animate='visible'
+					exit='exit'
+				>
+					<NavBar
+						as={motion.nav}
+						active={active}
+						setActive={setActive}
+						key='navbar'
+					/>
+					<AnimatePresence exitBeforeEnter>
 						<Switch
 							as={motion.div}
 							location={location}
@@ -71,9 +84,13 @@ function App() {
 					key='navMenu'
 					active={active}
 					setActive={setActive}
+					variants={appVariant}
+					initial='hidden'
+					animate='visible'
+					exit='exit'
 				/>
 			)}
-		</>
+		</AnimatePresence>
 	);
 }
 
