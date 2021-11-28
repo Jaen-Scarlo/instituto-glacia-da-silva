@@ -66,7 +66,7 @@ export const StyledForward = styled(FaAngleRight)`
 `;
 
 export const StyledImgContainer = styled.div`
-	padding: 1em 0.7em 4.5em 0.7em;
+	padding: 1em 0.7em 5.2em 0.7em;
 	background: white;
 	width: 350px;
 	height: 400px;
