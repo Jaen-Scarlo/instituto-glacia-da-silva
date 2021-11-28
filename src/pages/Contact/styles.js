@@ -57,6 +57,9 @@ export const InfoSection = styled.div`
 		&:focus {
 			border: 5px solid #1f77d0;
 		}
+		&:hover {
+			color: #1f77d0;
+		}
 		&:visited {
 			color: white;
 		}
@@ -128,9 +131,6 @@ export const StyledFiMail = styled(FiMail)`
 export const StyledGoLocation = styled(GoLocation)`
 	font-size: 1.8em;
 	min-width: 37px;
-	&:focus {
-		background: red;
-	}
 `;
 export const FlexSocialText = styled.div`
 	margin-top: 5em;

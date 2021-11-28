@@ -172,6 +172,7 @@ function Contact() {
 							href='https://www.google.com/maps/place/R.+Sto+Antonio,+196+-+S%C3%A3o+Roque,+Campo+Magro+-+PR,+83535-000/@-25.3643593,-49.4166328,19.33z/data=!4m15!1m9!3m8!1s0x94dd21c89e148855:0x414398e47aebe865!2sR.+Sto+Antonio,+196+-+S%C3%A3o+Roque,+Campo+Magro+-+PR,+83535-000!3b1!8m2!3d-25.364735!4d-49.416035!14m1!1BCgIgARICCAI!3m4!1s0x94dd21c89e148855:0x414398e47aebe865!8m2!3d-25.364735!4d-49.416035'
 							target='_blank'
 							rel='noreferrer'
+							className='location'
 						>
 							<FlexIconText
 								as={motion.div}
