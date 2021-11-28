@@ -6,11 +6,12 @@ import { FaFacebook } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 
 export const ContactContainer = styled.div`
-	height: 100vh;
+	min-height: 100vh;
 `;
 export const MainContainer = styled.div`
 	min-height: 100%;
 	display: flex;
+
 	.same-height {
 		width: 50%;
 		display: flex;
@@ -48,6 +49,19 @@ export const InfoSection = styled.div`
 	width: 100%;
 	padding: 1em;
 	color: white;
+
+	a {
+		color: white;
+		text-decoration: none;
+		display: block;
+		&:focus {
+			border: 5px solid #1f77d0;
+		}
+		&:visited {
+			color: white;
+		}
+	}
+
 	@media (max-width: 900px) {
 		height: 100%;
 		.pCont {
@@ -61,6 +75,10 @@ export const InfoSection = styled.div`
 		max-width: 80%;
 		margin: 0 auto 2.3em auto;
 
+		@media (min-width: 1500px) {
+			max-width: 90%;
+			font-size: 1.8em;
+		}
 		@media (max-width: 1000px) {
 			max-width: 90%;
 			font-size: 1.4em;
@@ -86,6 +104,10 @@ export const FlexIconText = styled.div`
 	margin-bottom: 0.3em;
 	overflow-x: hidden;
 
+	@media (min-width: 1500px) {
+		max-width: 90%;
+		font-size: 1.8em;
+	}
 	@media (max-width: 1000px) {
 		max-width: 90%;
 		font-size: 1.2em;
@@ -106,6 +128,9 @@ export const StyledFiMail = styled(FiMail)`
 export const StyledGoLocation = styled(GoLocation)`
 	font-size: 1.8em;
 	min-width: 37px;
+	&:focus {
+		background: red;
+	}
 `;
 export const FlexSocialText = styled.div`
 	margin-top: 5em;
@@ -116,6 +141,10 @@ export const FlexSocialText = styled.div`
 		text-decoration: none;
 		&:visited {
 			color: white;
+		}
+
+		&:hover {
+			color: #1f77d0;
 		}
 	}
 
@@ -144,6 +173,10 @@ export const FormSection = styled.div`
 		font-weight: 400;
 		font-size: 1.8em;
 		text-align: left;
+		@media (min-width: 1500px) {
+			max-width: 90%;
+			font-size: 2em;
+		}
 		@media (max-width: 1000px) {
 			font-size: 1.6em;
 			max-width: 90%;
@@ -154,6 +187,12 @@ export const FormSection = styled.div`
 		margin: 0 auto;
 		color: black;
 		font-size: 2em;
+
+		@media (min-width: 1500px) {
+			max-width: 90%;
+			font-size: 2.2em;
+		}
+
 		@media (max-width: 1000px) {
 			max-width: 90%;
 		}
@@ -188,6 +227,7 @@ export const FormSection = styled.div`
 			&[type='submit'] {
 				margin: 2em auto 0 auto;
 				max-width: 30%;
+				cursor: pointer;
 			}
 		}
 		textarea {
@@ -205,7 +245,6 @@ export const FormSection = styled.div`
 	}
 `;
 export const StyledFooter = styled.footer`
-	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
@@ -214,6 +253,16 @@ export const StyledFooter = styled.footer`
 	text-align: center;
 	padding: 0.3em;
 	color: white;
+	a {
+		color: white;
+		text-decoration: none;
+		&:visited {
+			color: white;
+		}
+		&:hover {
+			color: #1f77d0;
+		}
+	}
 
 	@media (max-width: 900px) {
 		position: relative;

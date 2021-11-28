@@ -11,6 +11,9 @@ export const AboutContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	overflow-x: hidden;
+	&:focus {
+		border-bottom: 5px solid #1f77d0;
+	}
 	.top-padding {
 		padding-top: 3em;
 	}
@@ -108,6 +111,10 @@ export const StyledImgContainer = styled.div`
 	overflow: hidden;
 	box-shadow: 5px 5px 4px 0px #95b9e7;
 
+	&:focus {
+		border-bottom: 5px solid #1f77d0;
+	}
+
 	@media (max-width: 700px) {
 		box-shadow: 0px 5px 4px 0px #95b9e7;
 		min-width: 100%;
@@ -124,7 +131,9 @@ export const StyledImg = styled.img`
 			: imgPos === 'third'
 			? '0px -100px'
 			: '50% 50%'};
-
+	&:focus {
+		border-bottom: 5px solid #1f77d0;
+	}
 	@media (max-width: 1200px) {
 		object-position: 50% 50%;
 	}

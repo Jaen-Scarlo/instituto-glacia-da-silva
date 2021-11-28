@@ -47,6 +47,7 @@ function NavMenu({ active, setActive }) {
 			<StyledClose
 				exit={{ opacity: 0 }}
 				onClick={() => changeState()}
+				alt='Imagem da letra X, que significa saída'
 			/>
 			<StyledWrapper>
 				<Link

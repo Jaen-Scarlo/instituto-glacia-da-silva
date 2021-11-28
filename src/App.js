@@ -76,6 +76,12 @@ function App() {
 								component={Contact}
 								key={location.key}
 							/>
+							<Route
+								path='*'
+								exact
+								component={Home}
+								key={location.key}
+							/>
 						</Switch>
 					</AnimatePresence>
 				</motion.div>

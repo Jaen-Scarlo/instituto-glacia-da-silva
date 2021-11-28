@@ -12,10 +12,17 @@ export const HomeContainer = styled.div`
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+
 	#flex {
 		max-height: 80%;
 		margin: 2em auto 0em auto;
 		display: flex;
+	}
+
+	@media (min-width: 2000px) {
+		#flex {
+			margin: 4em auto 0em auto;
+		}
 	}
 
 	@media (max-width: 920px) {
@@ -38,6 +45,13 @@ export const MainImg = styled.img`
 	z-index: 0;
 	object-fit: cover;
 	box-shadow: -7px 5px 14px rgba(0, 0, 0, 0.25);
+	&:focus {
+		border: 5px solid rgba(113, 188, 245, 0.25);
+	}
+
+	@media (min-width: 2000px) {
+		width: 600px;
+	}
 
 	@media (max-width: 920px) {
 		width: 350px;
@@ -80,6 +94,15 @@ export const TextAndCta = styled.div`
 	}
 	p span {
 		display: block;
+	}
+
+	@media (min-width: 2000px) {
+		h1 {
+			font-size: 4em;
+		}
+		p {
+			font-size: 2em;
+		}
 	}
 
 	@media (max-width: 920px) {
@@ -130,6 +153,7 @@ export const CtaBtn = styled.button`
 	border-radius: 40px;
 	box-shadow: 0px 4px rgba(0, 0, 0, 0.25);
 	width: fit-content;
+
 	a {
 		display: block;
 		font-size: 1.6em;
@@ -138,6 +162,12 @@ export const CtaBtn = styled.button`
 
 		&:visited {
 			color: #3675c6;
+		}
+	}
+
+	@media (min-width: 2000px) {
+		a {
+			font-size: 1.9em;
 		}
 	}
 

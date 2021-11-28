@@ -15,6 +15,10 @@ export const ObjectiveContainer = styled.div`
 	background-size: cover;
 	background-position: center;
 	background-color: #95b9e7;
+	display: flex;
+	#cont {
+		margin-bottom: 2em;
+	}
 `;
 export const StyledParagraph = styled.p`
 	color: white;
@@ -23,9 +27,9 @@ export const StyledParagraph = styled.p`
 	max-width: 60%;
 	margin: 0 auto;
 
-	margin-bottom: ${({ position }) =>
-		position === 'bottom' ? '2em' : '0em'};
-
+	@media (min-width: 1500px) {
+		font-size: 2.3em;
+	}
 	@media (max-width: 700px) {
 		max-width: 80%;
 		font-size: 1.4em;
@@ -38,25 +42,42 @@ export const StyledSlider = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	@media (min-width: 1500px) {
+		max-width: 100%;
+	}
 `;
 
 export const StyledReturn = styled(FaAngleLeft)`
 	font-size: 3em;
 	color: white;
+	cursor: pointer;
+	&:focus {
+		border: 3px solid white;
+	}
 `;
 
 export const StyledForward = styled(FaAngleRight)`
 	font-size: 3em;
 	color: white;
+	cursor: pointer;
+	&:focus {
+		border: 3px solid white;
+	}
 `;
 
 export const StyledImgContainer = styled.div`
-	padding: 1em 0.7em 4em 0.7em;
+	padding: 1em 0.7em 4.5em 0.7em;
 	background: white;
 	width: 350px;
 	height: 400px;
 	overflow: hidden;
 	transform: rotateX(40deg);
+	&:focus {
+		border: 3px solid white;
+	}
+	@media (min-width: 1500px) {
+		width: 500px;
+	}
 `;
 
 export const StyledImg = styled.img`

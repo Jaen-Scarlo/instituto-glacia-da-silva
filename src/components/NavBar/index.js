@@ -2,6 +2,8 @@ import React from 'react';
 import logoImg from '../../assets/instituto-glacia-da-silva-logo.png';
 import { motion } from 'framer-motion';
 
+import { useLocation } from 'react-router-dom';
+
 import {
 	NavContainer as Nav,
 	StyledIconWrapper as Wrapper,
@@ -23,6 +25,7 @@ const navVariant = {
 };
 
 function NavBar({ active, setActive }) {
+	const location = useLocation();
 	return (
 		<Nav
 			as={motion.nav}
@@ -31,18 +34,35 @@ function NavBar({ active, setActive }) {
 			initial='hidden'
 			animate='visible'
 			exit='exit'
+			tabIndex='1'
 		>
-			<Link to='/'>
+			{location.pathname !== '/' ? (
+				<Link to='/' tabIndex='2'>
+					<Wrapper>
+						<Icon
+							src={logoImg}
+							alt='Logotipo do instituto Glacia da Silva, as letras G e S formam um coração, com uma corrente abaixo'
+						/>
+					</Wrapper>
+				</Link>
+			) : (
 				<Wrapper>
-					<Icon src={logoImg} />
+					<Icon
+						src={logoImg}
+						alt='Logotipo do instituto Glacia da Silva, as letras G e S formam um coração, com uma corrente abaixo'
+					/>
 				</Wrapper>
-			</Link>
-			<StyledBars onClick={() => setActive(!active)} />
+			)}
+			<StyledBars
+				onClick={() => setActive(!active)}
+				tabIndex='2'
+			/>
 			<SLContainer>
 				<Link
 					exact={true}
 					to='/sobre'
 					activeClassName='active-link'
+					tabIndex='3'
 				>
 					SOBRE
 				</Link>
@@ -50,6 +70,7 @@ function NavBar({ active, setActive }) {
 					exact={true}
 					to='/objetivo'
 					activeClassName='active-link'
+					tabIndex='4'
 				>
 					OBJETIVO
 				</Link>
@@ -57,6 +78,7 @@ function NavBar({ active, setActive }) {
 					exact={true}
 					to='/contato'
 					activeClassName='active-link'
+					tabIndex='5'
 				>
 					CONTATO
 				</Link>

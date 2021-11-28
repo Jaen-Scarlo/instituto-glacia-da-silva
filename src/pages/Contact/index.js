@@ -137,7 +137,7 @@ function Contact() {
 			exit='exit'
 		>
 			<MainContainer>
-				<div class='same-height first'>
+				<div className='same-height first'>
 					<InfoSection>
 						<span className='pCont'>
 							<motion.p variants={firstTextVariant}>
@@ -168,16 +168,22 @@ function Contact() {
 							</span>
 						</FlexIconText>
 
-						<FlexIconText
-							as={motion.div}
-							variants={middleIconsVariant}
+						<a
+							href='https://www.google.com/maps/place/R.+Sto+Antonio,+196+-+S%C3%A3o+Roque,+Campo+Magro+-+PR,+83535-000/@-25.3643593,-49.4166328,19.33z/data=!4m15!1m9!3m8!1s0x94dd21c89e148855:0x414398e47aebe865!2sR.+Sto+Antonio,+196+-+S%C3%A3o+Roque,+Campo+Magro+-+PR,+83535-000!3b1!8m2!3d-25.364735!4d-49.416035!14m1!1BCgIgARICCAI!3m4!1s0x94dd21c89e148855:0x414398e47aebe865!8m2!3d-25.364735!4d-49.416035'
+							target='_blank'
+							rel='noreferrer'
 						>
-							<LocIcon />
-							<span>
-								Rua Santo Antônio, 580 - São Roque
-								Campo Magro PR
-							</span>
-						</FlexIconText>
+							<FlexIconText
+								as={motion.div}
+								variants={middleIconsVariant}
+							>
+								<LocIcon />
+								<span>
+									Rua Santo Antônio, 580 - São Roque
+									Campo Magro PR
+								</span>
+							</FlexIconText>
+						</a>
 
 						<FlexSocialText
 							as={motion.div}
@@ -214,7 +220,7 @@ function Contact() {
 					</InfoSection>
 				</div>
 
-				<div class='same-height second'>
+				<div className='same-height second'>
 					<FormSection
 						as={motion.div}
 						variants={formVariant}
@@ -258,13 +264,20 @@ function Contact() {
 						</form>
 					</FormSection>
 				</div>
-				<StyledFooter
-					as={motion.div}
-					variants={footerVariant}
-				>
-					Site feito e cedido por @JaenScarlo
-				</StyledFooter>
 			</MainContainer>
+			<StyledFooter
+				as={motion.div}
+				variants={footerVariant}
+			>
+				Site feito e cedido por{' '}
+				<a
+					href='https://github.com/Jaen-Scarlo'
+					target='_blank'
+					rel='noreferrer'
+				>
+					@JaenScarlo
+				</a>
+			</StyledFooter>
 		</ContactContainer>
 	);
 }

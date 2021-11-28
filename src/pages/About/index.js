@@ -180,23 +180,28 @@ function About() {
 							seu filho Paulo da Silva.
 						</span>
 						<span className='space-below'>
-							Dona Glaucia sempre teve em si um
-							espírito filantrópico, que a levava a
-							estender a mão ao próximo.
+							Dona Glacia sempre teve em si um espírito
+							filantrópico, que a levava a estender a
+							mão ao próximo.
 						</span>
 						<span>
 							Fazia o bem, sem olhar a quem. Essa é a
 							origem primordial da instituição que
 							agora leva o nome desse grande ser humano
-							que foi a Dona Glaucia.
+							que foi a Dona Glacia.
 						</span>
 					</StyledP>
 				</TxtDiv>
 				<StyledImgContainer
 					as={motion.div}
 					variants={imageVariantLeft}
+					tabIndex='6'
 				>
-					<StyledImg src={FirstPic} imgPos={'first'} />
+					<StyledImg
+						src={FirstPic}
+						imgPos={'first'}
+						alt='Imagem da Sr. Glacia da Silva com sua família'
+					/>
 				</StyledImgContainer>
 			</Section>
 
@@ -242,10 +247,12 @@ function About() {
 					<StyledImgContainer
 						as={motion.div}
 						variants={imageVariantRight}
+						tabIndex='7'
 					>
 						<StyledImg
 							src={SecondPic}
 							imgPos={'second'}
+							alt='Imagem do mentor do instituto, Sr. Paulo'
 						/>
 					</StyledImgContainer>
 				</Section>
@@ -284,10 +291,12 @@ function About() {
 					<StyledImgContainer
 						as={motion.div}
 						variants={imageVariantLeft}
+						tabIndex='8'
 					>
 						<StyledImg
 							src={ThirdPic}
 							imgPos={'third'}
+							alt='Imagem do barracão do Instituto Glacia da Silva'
 						/>
 					</StyledImgContainer>
 				</Section>

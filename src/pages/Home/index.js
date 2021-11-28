@@ -105,16 +105,19 @@ function Home() {
 			initial='hidden'
 			animate='visible'
 			exit='exit'
+			tabIndex='6'
 		>
 			<div id='flex'>
 				<MainImg
 					src={MainPic}
 					as={motion.img}
 					variants={imageVariant}
+					alt='Imagem do Sr.Paulo com amigos e familiares no Instituto Glacia da Silva'
+					tabIndex='7'
 				/>
 				<TextAndCta>
 					<motion.span
-						class='headers'
+						className='headers'
 						variants={headerVariant}
 					>
 						<h1>Instituto Glacia da Silva</h1>
